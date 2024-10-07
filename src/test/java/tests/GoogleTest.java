@@ -1,28 +1,21 @@
 package tests;
 
-import driver.DriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chromium.ChromiumDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import pages.N11MainPage;
+import pages.GooglePage;
 import utils.Utils;
 
-import java.time.Duration;
+import static extentReports.ExtentTestManager.getTest;
 
-
-public class MyFirstTest extends BaseTest
+public class GoogleTest extends BaseTest
 {
-    N11MainPage n11MainPage;
+    GooglePage googlePage;
     @BeforeClass
     public void goPage(){
-        System.out.println("The thread ID for MyFirstTest  goPage is "+ Thread.currentThread().threadId());
-        n11MainPage = new N11MainPage(driver);
-        driver.get("https://www.google.com");
-
+        System.out.println("The thread ID for GoogleTest  goPage is "+ Thread.currentThread().threadId());
+        googlePage = new GooglePage(driver);
+//        driver.get("https://www.google.com");
+        Utils.goPage("https://www.google.com");
     }
 //    @Parameters({"browser","baseURL"})
  /*   @Test
@@ -34,13 +27,19 @@ public class MyFirstTest extends BaseTest
 //        System.out.println("baseUrl = " + baseUrl);
     }*/
 
-    @Test
-    public void secondTest(){
-        System.out.println("The thread ID for MyFirstTest  secondTest is "+ Thread.currentThread().threadId());
-
-        System.out.println("Second test executed");
-        driver.get("https://www.facebook.com");
-        Assert.assertTrue(driver.getTitle().contains("Facebook"));
+    @Test(description = "Go To Google page and search a text")
+    public void searchText(){
+        String searchText = "Türkiye";
+        System.out.println("The thread ID for GoogleTest  searchText is "+ Thread.currentThread().threadId());
+        System.out.println("searchText test executed");
+        googlePage.searchByText(searchText);
+        // This getTest() method of extentReport, so it should be run within XML totally
+        getTest().info(searchText + " searched");
+        softAssert.assertEquals("Gogle", "Google");
+        /*
+        Some extra assertions, combining both soft and actual assertions
+         */
+        softAssert.assertAll();
     }
 
 

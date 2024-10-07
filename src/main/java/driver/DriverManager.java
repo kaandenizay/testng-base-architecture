@@ -1,0 +1,37 @@
+package driver;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.time.Duration;
+
+
+public class DriverManager {
+
+    private static final ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
+
+    public static void setThreadDriver(String browser) {
+        if (browser.equals("firefox")) {
+            driverPool.set(new FirefoxDriver());
+        } else if (browser.equals("chrome")) {
+            driverPool.set(new ChromeDriver());
+        }
+    }
+
+    public static WebDriver getThreadDriver() {
+        driverPool.get().manage().window().maximize();
+//        driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        return driverPool.get();
+    }
+
+    public static void quitDriver() {
+        if (driverPool.get() != null) {
+            getThreadDriver().quit();
+        }
+    }
+
+    public static void removeThreadPool() {
+        driverPool.remove();
+        }
+    }
