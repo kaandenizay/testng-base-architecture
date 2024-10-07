@@ -14,19 +14,9 @@ public class YoutubeTest extends BaseTest
     public void goPage(){
         System.out.println("The thread ID for YoutubeTest  goPage is "+ Thread.currentThread().threadId());
         youtubePage = new YoutubePage(driver);
-//        driver.get("https://www.youtube.com/");
         Utils.goPage("https://www.youtube.com/");
 
     }
-//    @Parameters({"browser","baseURL"})
- /*   @Test
-    public void firstTest(){
-        System.out.println("First test executed");
-        driver.get("https://www.google.com");
-        Assert.assertEquals(driver.getTitle(), "Google");
-//        System.out.println("browser = " + browser);
-//        System.out.println("baseUrl = " + baseUrl);
-    }*/
 
     @Test(description = "Go To Youtube page and search a text")
     public void searchVideo(){

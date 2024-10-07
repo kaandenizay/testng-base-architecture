@@ -13,7 +13,6 @@ public class N11ProductTest extends BaseTest{
     public void goPage(){
         System.out.println("The thread ID for n11MainPage  goPage is "+ Thread.currentThread().threadId());
         n11MainPage = new N11MainPage(driver);
-//        driver.get("https://www.n11.com/");
         Utils.goPage("https://www.n11.com/");
 
     }

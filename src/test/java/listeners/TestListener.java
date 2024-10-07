@@ -64,8 +64,6 @@ public class TestListener implements ITestListener {
             screenshotPath = screenshotPath + File.separator + screenshotName;
             File destFile = new File(screenshotPath);
             FileUtils.copyFile(src, destFile);
-//            getTest().log(Status.FAIL,result.getThrowable());
-//            getTest().addScreenCaptureFromPath(screenshotPath);
             getTest().fail(result.getThrowable())
                     .fail("Failure Screenshot", MediaEntityBuilder.createScreenCaptureFromPath(
                             "../test-output/screenshots/" + screenshotName).build());

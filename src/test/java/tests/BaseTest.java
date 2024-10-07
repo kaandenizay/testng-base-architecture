@@ -15,8 +15,6 @@ public class BaseTest {
      private final ThreadLocal<SoftAssert> softAssertPool = new ThreadLocal<>();
      protected SoftAssert softAssert;
 
-
-//    @Parameters({"browser"})
     @BeforeClass
     public void setupBrowser(){
         DriverManager.setThreadDriver(configuration().browser());

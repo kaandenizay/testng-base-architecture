@@ -13,7 +13,6 @@ public class PracticeAutomationTest extends BaseTest{
     @BeforeClass
     public void goPage(){
         practiceAutoLoginPage = new PracticeAutoLoginPage(driver);
-//        driver.get("https://practicetestautomation.com/practice-test-login/");
         Utils.goPage("https://practicetestautomation.com/practice-test-login/");
     }
 

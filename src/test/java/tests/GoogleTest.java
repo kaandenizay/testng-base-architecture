@@ -14,18 +14,8 @@ public class GoogleTest extends BaseTest
     public void goPage(){
         System.out.println("The thread ID for GoogleTest  goPage is "+ Thread.currentThread().threadId());
         googlePage = new GooglePage(driver);
-//        driver.get("https://www.google.com");
         Utils.goPage("https://www.google.com");
     }
-//    @Parameters({"browser","baseURL"})
- /*   @Test
-    public void firstTest(){
-        System.out.println("First test executed");
-        driver.get("https://www.google.com");
-        Assert.assertEquals(driver.getTitle(), "Google");
-//        System.out.println("browser = " + browser);
-//        System.out.println("baseUrl = " + baseUrl);
-    }*/
 
     @Test(description = "Go To Google page and search a text")
     public void searchText(){
