@@ -21,7 +21,6 @@ public class N11ProductTest extends BaseTest{
     public void productSearch(){
         System.out.println("The thread ID for n11MainPage  productSearch is "+ Thread.currentThread().threadId());
         n11MainPage.blockCookies();
-        System.out.println("success");
         Assert.fail("Yanlış ürün geldi");
     }
 

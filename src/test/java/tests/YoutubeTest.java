@@ -1,6 +1,5 @@
 package tests;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.YoutubePage;
@@ -21,12 +20,8 @@ public class YoutubeTest extends BaseTest
     @Test(description = "Go To Youtube page and search a text")
     public void searchVideo(){
         System.out.println("The thread ID for MyFirstTest  searchText is "+ Thread.currentThread().threadId());
-        System.out.println("searchText test executed");
         youtubePage.searchByText("Türkiye");
         softAssert.assertEquals("Yotube", "Youtube");
-        /*
-        Some extra assertions, combining both soft and actual assertions
-         */
         softAssert.assertAll();
     }
 

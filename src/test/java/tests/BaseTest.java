@@ -1,11 +1,12 @@
 package tests;
 
-import config.Configuration;
 import driver.DriverManager;
-import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
+import org.openqa.selenium.support.events.WebDriverListener;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
+import listeners.EventListener;
 
 import static config.ConfigurationManager.configuration;
 
@@ -20,6 +21,9 @@ public class BaseTest {
         DriverManager.setThreadDriver(configuration().browser());
         driver = DriverManager.getThreadDriver();
         System.out.println("Browser launched");
+        WebDriverListener listener = new EventListener();
+        driver = new EventFiringDecorator<>(listener).decorate(driver);
+
     }
 
     @BeforeMethod
