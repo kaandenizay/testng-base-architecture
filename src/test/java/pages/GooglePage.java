@@ -24,6 +24,6 @@ public class GooglePage extends BasePage{
         queryInput.click();
         queryInput.sendKeys(text + Keys.ENTER);
         Utils.sleep(5);
-        searchResults.getFirst().click();
+//        searchResults.get(0).click();
     }
 }

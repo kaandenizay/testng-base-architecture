@@ -11,7 +11,7 @@ public class N11ProductTest extends BaseTest{
 
     @BeforeClass
     public void goPage(){
-        System.out.println("The thread ID for n11MainPage  goPage is "+ Thread.currentThread().threadId());
+        System.out.println("The thread ID for n11MainPage  goPage is "+ Thread.currentThread().getId());
         n11MainPage = new N11MainPage(driver);
         Utils.goPage("https://www.n11.com/");
 
@@ -19,7 +19,7 @@ public class N11ProductTest extends BaseTest{
 
     @Test(description = "Go To N11 page and reject cookies")
     public void productSearch(){
-        System.out.println("The thread ID for n11MainPage  productSearch is "+ Thread.currentThread().threadId());
+        System.out.println("The thread ID for n11MainPage  productSearch is "+ Thread.currentThread().getId());
         n11MainPage.blockCookies();
         Assert.fail("Yanlış ürün geldi");
     }

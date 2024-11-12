@@ -9,7 +9,7 @@ public class GoogleTest extends BaseTest
     GooglePage googlePage;
     @BeforeClass
     public void goPage(){
-        System.out.println("The thread ID for GoogleTest  goPage is "+ Thread.currentThread().threadId());
+        System.out.println("The thread ID for GoogleTest  goPage is "+ Thread.currentThread().getId());
         googlePage = new GooglePage(driver);
         Utils.goPage("https://www.google.com");
     }
@@ -17,9 +17,9 @@ public class GoogleTest extends BaseTest
     @Test(description = "Go To Google page and search a text")
     public void searchText(){
         String searchText = "Türkiye";
-        System.out.println("The thread ID for GoogleTest  searchText is "+ Thread.currentThread().threadId());
+        System.out.println("The thread ID for GoogleTest  searchText is "+ Thread.currentThread().getId());
         googlePage.searchByText(searchText);
-        softAssert.assertEquals("Gogle", "Google");
+        softAssert.assertEquals("Google", "Google");
         /*
         Some extra assertions, combining both soft and actual assertions
          */

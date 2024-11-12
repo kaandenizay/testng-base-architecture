@@ -2,10 +2,8 @@ package driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import java.time.Duration;
-
 
 public class DriverManager {
 
@@ -15,7 +13,9 @@ public class DriverManager {
         if (browser.equals("firefox")) {
             driverPool.set(new FirefoxDriver());
         } else if (browser.equals("chrome")) {
-            driverPool.set(new ChromeDriver());
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--headless");
+            driverPool.set(new ChromeDriver(chromeOptions));
         }
     }
 

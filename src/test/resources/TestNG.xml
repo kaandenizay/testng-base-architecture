@@ -2,10 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Suite1" parallel="classes">
-<!--<suite name="Suite1">-->
-
-    <!--    <parameter name="browser" value="chrome"/>-->
-    <!--    <parameter name="baseURL" value="https://www.google.com"/>-->
 
     <listeners>
 <!--        <listener class-name="org.testng.reporters.EmailableReporter2"/>-->
@@ -22,18 +18,5 @@
             <class name="tests.PracticeAutomationTest"/>
         </classes>
     </test>
-<!--    <test name="Test on Chrome22">-->
-<!--        <parameter name="browser" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="tests.GoogleTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-    <!--    <test name="Test on Firefox">-->
-    <!--        <parameter name="browser" value="firefox"/>-->
-    <!--        <classes>-->
-    <!--            <class name="tests.GoogleTest"/>-->
-    <!--        </classes>-->
-    <!--    </test>-->
 
 </suite>

@@ -9,7 +9,7 @@ public class ExtentTestManager {
 
     static ExtentHtmlReporter htmlReporter;
     public static ExtentReports extentReports = createExtentReports();
-    static ThreadLocal<ExtentTest> extentTestMap = new ThreadLocal<>();
+    static final ThreadLocal<ExtentTest> extentTestMap = new ThreadLocal<>();
 
 
     public static synchronized  ExtentReports createExtentReports() {

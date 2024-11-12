@@ -24,6 +24,6 @@ public class YoutubePage extends BasePage{
         queryInput.click();
         queryInput.sendKeys(text + Keys.ENTER);
         Utils.sleep(5);
-        searchResultsForTurkiye.getFirst().click();
+        searchResultsForTurkiye.get(0).click();
     }
 }

@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config.LoadType;
 @Config.Sources({"classpath:configuration.properties"})
 public interface Configuration extends Config {
 
-//    @Key("browser")
+    @Key("browser")
     String browser();
 
 }
